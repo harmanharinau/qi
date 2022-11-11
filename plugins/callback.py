@@ -37,7 +37,7 @@ async def dbgive_access_handler(c:Client,query: CallbackQuery):
             print(e)
 
         await query.edit_message_text("DB Channel Verified. Make sure you join the channel")
-        return await c.send_message(from_user, f"Your channel {db_channel} has been verified. Bot will search posts from your channel only in your group")
+        return await c.send_message(from_user, f"Your channel {db_channel} has been verified. @MdiskSearch_Robot will search posts from your channel only in your group")
     except Exception as e:
         print(e)
 
@@ -46,7 +46,7 @@ async def dbdeny_access_handler(c:Client,query: CallbackQuery):
     from_user = int(query.data.split("#")[1])
     db_channel = int(query.data.split("#")[2])
     await query.edit_message_text("Channel has been rejected successfully")
-    return await c.send_message(from_user, f"Your request for channel [`{db_channel}`] has been rejected by Admin")
+    return await c.send_message(from_user, f"Your request for channel [`{db_channel}`] has been rejected by @CyniteOfficial Please Contact admin For More Information")
 
 
 @Client.on_callback_query(filters.regex(r"^deny_access"))
