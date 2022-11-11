@@ -45,7 +45,7 @@ async def start_handler(_,event: Message):
     )
 
 VERIFY = {}
-@Client.on_message(filters.command("request") & filters.group)
+@Client.on_message(filters.command("verify") & filters.group)
 async def request_handler(c,m: Message):
     global VERIFY
     chat_id = m.chat.id
@@ -74,13 +74,13 @@ async def request_handler(c,m: Message):
 
         ])
 
-        return await m.reply_text(f"Your group may not have access to add your own DB Channel or may have expired. Please request access to the admin" ,reply_markup=REPLY_MARKUP ,disable_web_page_preview=True)
+        return await m.reply_text(f"Your group may not have access to add your own Database Channel or may have expired. Please Veridy Again to the admin" ,reply_markup=REPLY_MARKUP ,disable_web_page_preview=True)
 
     else:
-        return await m.reply_text("Your group already have access to /addb")
+        return await m.reply_text("Your group already have access to /database")
 
 
-@Client.on_message(filters.command("addb") & filters.group)
+@Client.on_message(filters.command("database") & filters.group)
 async def addb_handler(c, m: Message):
     global VERIFY
     chat_id = m.chat.id
@@ -125,9 +125,9 @@ async def addb_handler(c, m: Message):
     ])      
 
             await c.send_message(Config.LOG_CHANNEL,  f"Join the channel and then alllow. \n\n#NewDBChannel\n\nDB Chnl Invite Link: {invite_link.invite_link}\nGroup:`{group_id}`\n\nNote: This group has been already has access", reply_markup=REPLY_MARKUP)
-            return await m.reply_text("DB Channel added successfully. Wait for the admin to approve the channel. You will be notified", )
+            return await m.reply_text("Database Channel added successfully. Wait for the admin to approve the channel. You will be notified", )
         else:
-            return await m.reply_text("Make the bot admin in the channel and /addb -100xxx")
+            return await m.reply_text("Make the bot admin in the channel and /database -100xxx")
     else:
-        return await m.reply_text("Your group does not have access to this command. Please /request access")
+        return await m.reply_text("Your group does not have access to this command. Please /Verify access")
 
