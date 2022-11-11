@@ -30,6 +30,6 @@ class Config(object):
     FORCE_SUB = os.getenv("FORCE_SUB", "False")
     AUTO_DELETE_TIME = int(os.getenv("AUTO_DELETE_TIME", 300))
     MDISK_API = os.getenv("MDISK_API", "12334")
-    VERIFIED_TIME  = int(os.getenv("VERIFIED_TIME", "1"))
+    VERIFIED_TIME  = int(os.getenv("VERIFIED_TIME", "365"))
     ABOUT_BOT_TEXT = os.getenv("ABOUT_TEXT")
     ABOUT_HELP_TEXT = os.getenv("HELP_TEXT")
