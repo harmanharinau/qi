@@ -107,7 +107,11 @@ async def message_handler(event):
             answer = f'''**No Results Found For {event.text}**
 
 **Type Only Movie Name 💬**
-**Check Spelling On** [Google](http://www.google.com/search?q={event.text.replace(' ', '%20')}%20Movie) 🔍
+
+**If Searching Any Series Do Not add Season or Episode**
+**Do Not add languages or Year Of Movie/Series**
+**if Movie Not found Then Request to Admin May Be Its Not Added To Bot**
+**If You Doesn't Know Spelling Check On** [Google](http://www.google.com/search?q={event.text.replace(' ', '%20')}%20Movie) 🔍
     '''
 
             newbutton = [Button.url('Click To Check Spelling ✅',
