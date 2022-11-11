@@ -19,7 +19,7 @@ async def help_handler(_, event: Message):
         ])
     )                        
 
-@Client.on_message(filters.command("total_users") & filters.private &  filters.chat(Config.BOT_OWNER))
+@Client.on_message(filters.command("users") & filters.private &  filters.chat(Config.BOT_OWNER))
 async def total_users(_, event: Message):
     total_users = await db.total_users_count()
     msg = f"""
