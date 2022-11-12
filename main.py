@@ -110,14 +110,16 @@ async def message_handler(event):
 
 **Do Not add languages or Year💥**
 
-**if Movie Not found Then Request to Admin May Be Its Not Added To Bot🤖**
+**If Movie Not found Then Request to Admin May Be Its Not Added To Bot🤖**
+
+**If Dont Know How To Watch Movies With Mdisk search Bot Then Clic On How To Watch Button📱**
 
 **If You Doesn't Know Spelling Check On** [Google](http://www.google.com/search?q={event.text.replace(' ', '%20')}%20Movie) 🔍
     '''
 
             newbutton = [Button.url('Click To Check Spelling ✅',
                                     f'http://www.google.com/search?q={event.text.replace(" ", "%20")}%20Movie')], [
-                            Button.url('Click To Check Release Date 📅',
+                            Button.url('How To Watch',
                                     f'http://www.google.com/search?q={event.text.replace(" ", "%20")}%20Movie%20Release%20Date')]
             await txt.delete()
             result = await event.reply(answer, buttons=newbutton, link_preview=False)
