@@ -140,7 +140,14 @@ async def message_handler(event):
             author=Config.BOT_USERNAME
         )
         message = f'**Click Here 👇 For "{event.text}"**\n\n[🍿🎬 {str(event.text).upper()}\n🍿🎬 {str("Click me for results").upper()}]({tgraph_result})'
-
+reply_markup=InlineKeyboardMarkup(
+                [
+                        InlineKeyboardButton('⚡ʜᴏᴡ ᴛᴏ ᴡᴀᴛᴄʜ⚡', url='https://t.me/cynitemovies/17')
+                    ]
+                ]
+            ),
+            parse_mode="html"
+        )
         await txt.delete()
         result = await event.reply(message, link_preview=False)
         await asyncio.sleep(Config.AUTO_DELETE_TIME)
