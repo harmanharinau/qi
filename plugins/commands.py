@@ -14,7 +14,7 @@ async def help_handler(_, event: Message):
             ],
 
              [InlineKeyboardButton("About", callback_data="About_msg"),
-             InlineKeyboardButton("Watch Tutorial",url=f'https://youtu.be/34IlfsamU6Q)
+             InlineKeyboardButton("Watch Tutorial', url=f'https://youtu.be/34IlfsamU6Q)
              ]
         ])
     )                        
