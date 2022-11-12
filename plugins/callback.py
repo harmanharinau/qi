@@ -118,7 +118,7 @@ async def button(bot, cmd: CallbackQuery):
             ], 
                                         [
                         InlineKeyboardButton("About", callback_data="About_msg"),
-                        InlineKeyboardButton("Home", callback_data="gohome")
+                        InlineKeyboardButton('Watch Tutorial', url='https://youtu.be/34IlfsamU6Q')
                     ]
                 ]
             ),
