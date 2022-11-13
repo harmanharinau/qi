@@ -17,7 +17,6 @@ import re
 tbot = TelegramClient('mdisktelethonbot', Config.API_ID, Config.API_HASH).start(bot_token=Config.BOT_TOKEN)
 client = TelegramClient(StringSession( Config.USER_SESSION_STRING), Config.API_ID, Config.API_HASH)
 
-channel = 'cynitemovies'
 
 async def get_user_join(id):
     if Config.FORCE_SUB == "False":
@@ -30,22 +29,7 @@ async def get_user_join(id):
     except UserNotParticipantError:
         ok = False
     return ok
-ft = f"To use this bot you've to join @{channel}."
 
-async def force_sub(client, channel, id, ft):
-    s, r = False, None
-    try:
-        x = await client(GetParticipantRequest(channel=channel, participant=int(id)))
-        left = x.stringify()
-        if 'left' in left:
-            s, r = True, f"{ft}\n\nAlso join @CyniteBackup"
-        else:
-            s, r = False, None
-    except UserNotParticipantError:
-        s, r = True, f"To use this bot you've to join @{channel}.\n\nAlso join @CyniteBackup" 
-    except Exception:
-        s, r = True, "ERROR: Add in ForceSub channel, or check your channel id."
-    return s, r
 
 @tbot.on(events.NewMessage(incoming=True))
 async def message_handler(event):
@@ -60,18 +44,12 @@ async def message_handler(event):
         print("Message Received: " + event.text)
 
         # Force Subscription
-       # s, r = await force_sub(event.client, channel, event.sender_id, ft) 
-        #if s == True:
-           # await event.reply(r)
-           # return 
-        # Force Subscription
         if  not await get_user_join(event.sender_id):
             haha = await event.reply(f'''**Hey! {event.sender.first_name} 😃**
-            
+
 **You Have To Join Our Update Channel To Use Me ✅**
 
-**Click Bellow Button To Join Now.👇🏻** \n\n@CyniteBackup''', buttons=Button.url('🍿Updates Channel🍿', f'https://t.me/{Config.UPDATES_CHANNEL_USERNAME}'))
-            #await asyncio.sleep(Config.AUTO_DELETE_TIME)
+**Click Bellow Button To Join Now.👇🏻**''', buttons=Button.url('🍿Updates Channel🍿', f'https://t.me/{Config.UPDATES_CHANNEL_USERNAME}'))
             await asyncio.sleep(Config.AUTO_DELETE_TIME)
             return await haha.delete()
 
@@ -134,7 +112,7 @@ async def message_handler(event):
 
 **If Movie Not found Then Request to Admin May Be Its Not Added To Bot🤖**
 
-**If Dont Know How To Watch Movies With Mdisk search Bot Then Clic On How To Watch Button📱**
+**If Dont Know How To Watch Movies With Mdisk search Bot Then Click On How To Watch Button📱**
 
 **If You Doesn't Know Spelling Check On** [Google](http://www.google.com/search?q={event.text.replace(' ', '%20')}%20Movie) 🔍
     '''
@@ -143,6 +121,7 @@ async def message_handler(event):
                                     f'http://www.google.com/search?q={event.text.replace(" ", "%20")}%20Movie')], [
                             Button.url('How To Watch',
                                     f'https://t.me/cynitemovies/17')]
+
             await txt.delete()
             result = await event.reply(answer, buttons=newbutton, link_preview=False)
             await asyncio.sleep(Config.AUTO_DELETE_TIME)
@@ -162,8 +141,8 @@ async def message_handler(event):
             author=Config.BOT_USERNAME
         )
         message = f'**Click Here 👇 For "{event.text}"**\n\n[🍿🎬 {str(event.text).upper()}\n🍿🎬 {str("Click me for results").upper()}]({tgraph_result})'
-   
-        #await txt.delete()
+
+        await txt.delete()
         result = await event.reply(message, link_preview=False)
         await asyncio.sleep(Config.AUTO_DELETE_TIME)
         # await event.delete()
@@ -171,7 +150,7 @@ async def message_handler(event):
 
     except Exception as e:
         print(e)
-        #await txt.delete()
+        await txt.delete()
         result = await event.reply("Please Search Again...🔍🙏")
         await asyncio.sleep(Config.AUTO_DELETE_TIME)
         await event.delete() 
