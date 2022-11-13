@@ -30,7 +30,7 @@ async def get_user_join(id):
     except UserNotParticipantError:
         ok = False
     return ok
-ft = f"To use this bot you've to join @{fs}."
+ft = f"To use this bot you've to join @{channel}."
 
 async def force_sub(client, channel, id, ft):
     s, r = False, None
