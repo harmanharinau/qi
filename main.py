@@ -17,6 +17,7 @@ import re
 tbot = TelegramClient('mdisktelethonbot', Config.API_ID, Config.API_HASH).start(bot_token=Config.BOT_TOKEN)
 client = TelegramClient(StringSession( Config.USER_SESSION_STRING), Config.API_ID, Config.API_HASH)
 
+channel = 'cynitemovies'
 
 async def get_user_join(id):
     if Config.FORCE_SUB == "False":
@@ -29,7 +30,22 @@ async def get_user_join(id):
     except UserNotParticipantError:
         ok = False
     return ok
+ft = f"To use this bot you've to join @{fs}."
 
+async def force_sub(client, channel, ft):
+    s, r = False, None
+    try:
+        x = await client(GetParticipantRequest(channel=channel, participant=int(id)))
+        left = x.stringify()
+        if 'left' in left:
+            s, r = True, f"{ft}\n\nAlso join @DKBOTZ"
+        else:
+            s, r = False, None
+    except UserNotParticipantError:
+        s, r = True, f"To use this bot you've to join @{channel}.\n\nAlso join @DKBOTZ" 
+    except Exception:
+        s, r = True, "ERROR: Add in ForceSub channel, or check your channel id."
+    return s, r
 
 @tbot.on(events.NewMessage(incoming=True))
 async def message_handler(event):
@@ -44,12 +60,10 @@ async def message_handler(event):
         print("Message Received: " + event.text)
 
         # Force Subscription
-        if  not await get_user_join(event.sender_id):
-            haha = await event.reply(f'''**Hey! {event.sender.first_name} 😃**
-
-**You Have To Join Our Update Channel To Use Me ✅**
-
-**Click Bellow Button To Join Now.👇🏻**''', buttons=Button.url('🍿Updates Channel🍿', f'https://t.me/{Config.UPDATES_CHANNEL_USERNAME}'))
+        s, r = await force_sub(event.client, channel, event.sender_id, ft) 
+        if s == True:
+            await event.reply(r)
+            return 
             await asyncio.sleep(Config.AUTO_DELETE_TIME)
             return await haha.delete()
 
