@@ -38,11 +38,11 @@ async def force_sub(client, channel, id, ft):
         x = await client(GetParticipantRequest(channel=channel, participant=int(id)))
         left = x.stringify()
         if 'left' in left:
-            s, r = True, f"{ft}\n\nAlso join @DKBOTZ"
+            s, r = True, f"{ft}\n\nAlso join @CyniteBackup"
         else:
             s, r = False, None
     except UserNotParticipantError:
-        s, r = True, f"To use this bot you've to join @{channel}.\n\nAlso join @DKBOTZ" 
+        s, r = True, f"To use this bot you've to join @{channel}.\n\nAlso join @CyniteBackup" 
     except Exception:
         s, r = True, "ERROR: Add in ForceSub channel, or check your channel id."
     return s, r
@@ -70,7 +70,7 @@ async def message_handler(event):
             
 **You Have To Join Our Update Channel To Use Me ✅**
 
-**Click Bellow Button To Join Now.👇🏻** \n\n@DKBOTZ''', buttons=Button.url('🍿Updates Channel🍿', f'https://t.me/{Config.UPDATES_CHANNEL_USERNAME}'))
+**Click Bellow Button To Join Now.👇🏻** \n\n@CyniteBackup''', buttons=Button.url('🍿Updates Channel🍿', f'https://t.me/{Config.UPDATES_CHANNEL_USERNAME}'))
             #await asyncio.sleep(Config.AUTO_DELETE_TIME)
             await asyncio.sleep(Config.AUTO_DELETE_TIME)
             return await haha.delete()
