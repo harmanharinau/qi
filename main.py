@@ -60,10 +60,18 @@ async def message_handler(event):
         print("Message Received: " + event.text)
 
         # Force Subscription
-        s, r = await force_sub(event.client, channel, event.sender_id, ft) 
-        if s == True:
-            await event.reply(r)
-            return 
+       # s, r = await force_sub(event.client, channel, event.sender_id, ft) 
+        #if s == True:
+           # await event.reply(r)
+           # return 
+        # Force Subscription
+        if  not await get_user_join(event.sender_id):
+            haha = await event.reply(f'''**Hey! {event.sender.first_name} 😃**
+            
+**You Have To Join Our Update Channel To Use Me ✅**
+
+**Click Bellow Button To Join Now.👇🏻** \n\n@DKBOTZ''', buttons=Button.url('🍿Updates Channel🍿', f'https://t.me/{Config.UPDATES_CHANNEL_USERNAME}'))
+            #await asyncio.sleep(Config.AUTO_DELETE_TIME)
             await asyncio.sleep(Config.AUTO_DELETE_TIME)
             return await haha.delete()
 
