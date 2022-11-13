@@ -32,7 +32,7 @@ async def get_user_join(id):
     return ok
 ft = f"To use this bot you've to join @{fs}."
 
-async def force_sub(client, channel, ft):
+async def force_sub(client, channel, id, ft):
     s, r = False, None
     try:
         x = await client(GetParticipantRequest(channel=channel, participant=int(id)))
