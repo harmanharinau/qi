@@ -50,8 +50,9 @@ async def message_handler(event):
 **You Have To Join Our Update Channel To Use Me ✅**
 
 **Click Bellow Button To Join Now.👇🏻**''', buttons=Button.url('🍿Updates Channel🍿', f'https://t.me/{Config.UPDATES_CHANNEL_USERNAME}'))
-            await asyncio.sleep(Config.AUTO_DELETE_TIME)
-            return await haha.delete()
+            await asyncio.sleep(200)
+            await haha.delete()
+            return 
 
         args = event.text
         args = await validate_q(args)
@@ -62,7 +63,7 @@ async def message_handler(event):
         if not args:
             return
 
-        txt = await event.reply('**Searching For "{}" 🔍**'.format(event.text))
+        txt = await event.reply('**Searching For {} 🔍**'.format(event.text))
 
 
 
@@ -106,23 +107,16 @@ async def message_handler(event):
         if c <= 0:
             answer = f'''**No Results Found For {event.text}**
 
-**Do Not add Season or Episode💬**
-
-**Do Not add languages or Year💥**
-
-**If Movie Not found Then Request to Admin May Be Its Not Added To Bot🤖**
-
-**If Dont Know How To Watch Movies With Mdisk search Bot Then Click On How To Watch Button📱**
-
-**If You Doesn't Know Spelling Check On** [Google](http://www.google.com/search?q={event.text.replace(' ', '%20')}%20Movie) 🔍
+**Type Only Movie Name 💬**
+**Check Spelling On** [Google](http://www.google.com/search?q={event.text.replace(' ', '%20')}%20Movie) 🔍
     '''
 
             newbutton = [Button.url('Click To Check Spelling ✅',
                                     f'http://www.google.com/search?q={event.text.replace(" ", "%20")}%20Movie')], [
-                            Button.url('How To Watch',
-                                    f'https://t.me/cynitemovies/17')]
-
+                            Button.url('Click To Check Release Date 📅',
+                                    f'http://www.google.com/search?q={event.text.replace(" ", "%20")}%20Movie%20Release%20Date')]
             await txt.delete()
+            await asyncio.sleep(0.5)
             result = await event.reply(answer, buttons=newbutton, link_preview=False)
             await asyncio.sleep(Config.AUTO_DELETE_TIME)
             await event.delete()
@@ -143,6 +137,7 @@ async def message_handler(event):
         message = f'**Click Here 👇 For "{event.text}"**\n\n[🍿🎬 {str(event.text).upper()}\n🍿🎬 {str("Click me for results").upper()}]({tgraph_result})'
 
         await txt.delete()
+        await asyncio.sleep(0.5)
         result = await event.reply(message, link_preview=False)
         await asyncio.sleep(Config.AUTO_DELETE_TIME)
         # await event.delete()
@@ -152,9 +147,12 @@ async def message_handler(event):
         print(e)
         await txt.delete()
         result = await event.reply("Please Search Again...🔍🙏")
+        await asyncio.sleep(0.5)
+        await result.delete()
         await asyncio.sleep(Config.AUTO_DELETE_TIME)
         await event.delete() 
-        return await result.delete()
+        
+        return 
 
 
 async def escape_url(str):
@@ -182,7 +180,10 @@ print(f"""
  _____________________________________________   
 |                                             |  
 |          Deployed Successfully              |  
-|              Join @{Config.UPDATES_CHANNEL_USERNAME}                 |
+|              Join @{Config.UPDATES_CHANNEL_USERNAME}   
+|                                             |
+|           BoT by @TechnicalcYnite 💖                |
+|         ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️           |    
 |_____________________________________________|
     """)
 
