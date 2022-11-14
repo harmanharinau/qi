@@ -19,6 +19,31 @@ async def help_handler(_, event: Message):
         ])
     )                        
 
+@Client.on_message(filters.command('leave') & filters.private &  filters.chat(Config.BOT_OWNER))
+async def leave_a_chat(bot, message):
+    if len(message.command) == 1:
+        return await message.reply('Give me a chat id')
+    chat = message.command[1]
+    try:
+        chat = int(chat)
+    except:
+        chat = chat
+    try:
+        buttons = [[
+            InlineKeyboardButton('𝚂𝚄𝙿𝙿𝙾𝚁𝚃', url=f'https://t.me/Cyniteofficial')
+        ]]
+        reply_markup=InlineKeyboardMarkup(buttons)
+        await bot.send_message(
+            chat_id=chat,
+            text='<b>Hello Friends, \nMy admin has told me to leave from group so i go! If you wanna add me again contact my support group.</b>',
+            reply_markup=reply_markup,
+        )
+
+        await bot.leave_chat(chat)
+        await message.reply(f"left the chat `{chat}`")
+    except Exception as e:
+        await message.reply(f'Error - {e}')
+
 @Client.on_message(filters.command("users") & filters.private &  filters.chat(Config.BOT_OWNER))
 async def total_users(_, event: Message):
     total_users = await db.total_users_count()
