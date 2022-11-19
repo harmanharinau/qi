@@ -21,7 +21,7 @@ async def dbdeny_access_cmd_handler(c:Client,query: Message):
 async def give_access_cmd_handler(_, m: Message):
     if len(m.command) == 3:
         group_id = int(m.command[1])
-        days = int(m.command[2])
+        days = int(m.command[31])
         update = await db.update_group(str(group_id).replace("-100", ""), {
             "has_access": True, 
             "last_verified":datetime.now(),
