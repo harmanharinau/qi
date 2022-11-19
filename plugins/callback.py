@@ -81,7 +81,6 @@ async def request_access_handler(c:Client,query: CallbackQuery):
         await c.send_message(Config.LOG_CHANNEL, f"""
 #NewRequest
 Group ID: {group_id}
-Requested By: `[{cmd.from_user.first_name}](tg://user?id={cmd.from_user.id})`
 Give Access: `/give_access {group_id} no_of_days`
 Deny Access: `/deny_access `{group_id}`""", reply_markup=REPLY_MARKUP)
 
