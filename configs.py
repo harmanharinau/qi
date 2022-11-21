@@ -18,7 +18,7 @@ class Config(object):
 #    OWNER_USERNAME = os.getenv("OWNER_USERNAME", "cyniteofficial")
     BACKUP_CHANNEL = os.getenv("BACKUP_CHANNEL", "cynitebackup")
 #    GROUP_USERNAME = os.getenv("GROUP_USERNAME")
-        START_MSG = os.getenv("START_MSG", "**Hᴇʏ {} Iᴍ A Bᴏᴛ Fᴏʀ Sᴇɴᴅɪɴɢ Fʀᴏᴍ Yᴏᴜʀ Cʜᴀɴɴᴇʟ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ.Yᴏᴜ Cᴀɴ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ.Fᴏʀ Mᴏʀᴇ Iɴꜰᴏ Cʟɪᴄᴋ Oɴ Hᴇʟᴘ ✅**" )
+    START_MSG = os.getenv("START_MSG", "**Hᴇʏ {} Iᴍ A Bᴏᴛ Fᴏʀ Sᴇɴᴅɪɴɢ Fʀᴏᴍ Yᴏᴜʀ Cʜᴀɴɴᴇʟ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ.Yᴏᴜ Cᴀɴ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ.Fᴏʀ Mᴏʀᴇ Iɴꜰᴏ Cʟɪᴄᴋ Oɴ Hᴇʟᴘ ✅**" )
     START_PHOTO = os.getenv("START_PHOTO", "https://telegra.ph/file/b57323ed245c34a374ac4.jpg")
     HOME_TEXT = os.getenv("HOME_TEXT", "**ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕ɪ ᴄᴀɴ ᴘʀᴏᴠɪᴅᴇ ᴛʜᴇʀᴇ ʏᴏᴜʀ ʟɪɴᴋꜱ. ꜰᴏʀ ᴍᴏʀᴇ ɪɴꜰᴏ ᴄʟɪᴄᴋ ᴏɴ ʜᴇʟᴘ ✅**" )
     UPDATES_CHANNEL = os.getenv("UPDATES_CHANNEL", "-1001249072794")
