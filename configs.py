@@ -18,9 +18,21 @@ class Config(object):
 #    OWNER_USERNAME = os.getenv("OWNER_USERNAME", "cyniteofficial")
     BACKUP_CHANNEL = os.getenv("BACKUP_CHANNEL", "cynitebackup")
 #    GROUP_USERNAME = os.getenv("GROUP_USERNAME")
-    START_MSG = os.getenv("START_MSG", "Wait" )
+    START_MSG = os.getenv("START_MSG", "Hᴇʏ Bᴜᴅᴅʏ! 
+
+I Aᴍ  Bᴏᴛ Fᴏʀ Sᴇɴᴅɪɴɢ Fʀᴏᴍ Yᴏᴜʀ Cʜᴀɴɴᴇʟ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ.
+
+Yᴏᴜ Cᴀɴ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ.
+
+Fᴏʀ Mᴏʀᴇ Iɴꜰᴏ Cʟɪᴄᴋ Oɴ Hᴇʟᴘ" )
     START_PHOTO = os.getenv("START_PHOTO", "https://telegra.ph/file/b57323ed245c34a374ac4.jpg")
-    HOME_TEXT = os.getenv("HOME_TEXT", "Wait" )
+    HOME_TEXT = os.getenv("HOME_TEXT", "Hᴇʏ Bᴜᴅᴅʏ! 
+
+I Aᴍ  Bᴏᴛ Fᴏʀ Sᴇɴᴅɪɴɢ Fʀᴏᴍ Yᴏᴜʀ Cʜᴀɴɴᴇʟ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ.
+
+Yᴏᴜ Cᴀɴ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ.
+
+Fᴏʀ Mᴏʀᴇ Iɴꜰᴏ Cʟɪᴄᴋ Oɴ Hᴇʟᴘ" )
     UPDATES_CHANNEL = os.getenv("UPDATES_CHANNEL", "Cynitemovies")
     DATABASE_URL = os.getenv("DATABASE_URL", "mongodb+srv://Okfilterpro:Okfilterpro@cluster0.ec0gpus.mongodb.net/?retryWrites=true&w=majority")
     LOG_CHANNEL = int(os.getenv("LOG_CHANNEL", "-1001735125267"))
