@@ -19,7 +19,7 @@ class Config(object):
     BACKUP_CHANNEL = os.getenv("BACKUP_CHANNEL", "cynitebackup")
 #    GROUP_USERNAME = os.getenv("GROUP_USERNAME")
     START_MSG = os.getenv("START_MSG", "Wait" )
-    START_PHOTO = os.getenv("START_PHOTO", https://telegra.ph/file/b57323ed245c34a374ac4.jpg)
+    START_PHOTO = os.getenv("START_PHOTO", "https://telegra.ph/file/b57323ed245c34a374ac4.jpg")
     HOME_TEXT = os.getenv("HOME_TEXT", "Wait" )
     UPDATES_CHANNEL = os.getenv("UPDATES_CHANNEL", "Cynitemovies")
     DATABASE_URL = os.getenv("DATABASE_URL", "mongodb+srv://Okfilterpro:Okfilterpro@cluster0.ec0gpus.mongodb.net/?retryWrites=true&w=majority")
