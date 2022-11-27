@@ -139,7 +139,7 @@ async def message_handler(event):
             title=event.text,
             author=Config.BOT_USERNAME
         )
-        message = f'**Click Below Button 👇 For "{event.text}"**/n/n'
+        message = f'**Click Below Button 👇 For "{event.text}"**'
 
         newbutton = [Button.url('📍Click Here📍',
                                     f'{tgraph_result}')]
