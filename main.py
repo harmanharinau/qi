@@ -142,7 +142,9 @@ async def message_handler(event):
         message = f'**Click Below Button 👇 For "{event.text}"**'
 
         newbutton = [Button.url('📍Click Here📍',
-                                    f'{tgraph_result}')]
+                                    f'{tgraph_result}')], [
+                            Button.url('Join Updates Channel ✅',
+                                    f'https://t.me/{Config.UPDATES_CHANNEL_USERNAME}')]
 
         await txt.delete()
         await asyncio.sleep(0.5)
