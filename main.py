@@ -106,13 +106,7 @@ async def message_handler(event):
         if c <= 0:
             answer = f'''**No Results Found For {event.text}**
 
-**Do Not add Season or Episode💬**
-
-**Do Not add languages or Year💥**
-
-**If Movie Not found Then Request to Admin May Be Its Not Added To Bot🤖**
-
-**If Dont Know How To Watch Movies With Mdisk search Bot Then Click On How To Watch Button📱**
+**If Dont Know How To Watch Movies With Bot Then Click On How To Watch Button📱**
 
 **If You Doesn't Know Spelling Check On** [Google](http://www.google.com/search?q={event.text.replace(' ', '%20')}%20Movie) 🔍
     '''
