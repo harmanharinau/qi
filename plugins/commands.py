@@ -89,7 +89,7 @@ async def send_chatmsg(bot, message):
         await message.reply_text("<b>Cᴏᴍᴍᴀɴᴅ Iɴᴄᴏᴍᴘʟᴇᴛᴇ...</b>")
 
 
-@Client.on_message(filters.command("request") & filters.group)
+@Client.on_message(filters.command("contact") & filters.user(ADMINS))
 async def report_user(bot, message):
     if message.reply_to_message:
         chat_id = message.chat.id
@@ -111,7 +111,7 @@ async def report_user(bot, message):
             except:
                 pass
         if success:
-            await message.reply_text("Your Requested Movie Name Sent To Group admins!")
+            await message.reply_text("Hey Mr {} Your Message Has Been Send To Bot Owner!")
 
 @Client.on_message(filters.command('Glink') & filters.private &  filters.chat(Config.BOT_OWNER))
 async def gen_invite(bot, message):
