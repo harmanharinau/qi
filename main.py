@@ -49,7 +49,7 @@ async def message_handler(event):
 
 **You Have To Join Our Update Channel To Use Me ✅**
 
-**Click Bellow Button To Join Now.👇🏻**''', buttons=Button.url('🍿Updates Channel🍿', f'https://t.me/{Config.UPDATES_CHANNEL_USERNAME}'))
+**Click Below Button To Join Now.👇🏻**''', buttons=Button.url('🍿Updates Channel🍿', f'https://t.me/{Config.UPDATES_CHANNEL_USERNAME}'))
             await asyncio.sleep(Config.AUTO_DELETE_TIME)
             return await haha.delete()
 
@@ -106,12 +106,12 @@ async def message_handler(event):
         if c <= 0:
             answer = f'''**No Results Found For {event.text}**
 
-**If You Dont Know How To Use Then Click On How To Watch Button📱**
+**If You Don't Know How To Use {Config.BOT_USERNAME}.Then Click On How To Watch📱**
 
 **If You Doesn't Know Spelling Check On** [Google](http://www.google.com/search?q={event.text.replace(' ', '%20')}%20Movie) 🔍
     '''
 
-            newbutton = [Button.url('Click To Check Spelling ✅',
+            newbutton = [Button.url('Click Here To Check Spelling ✅',
                                     f'http://www.google.com/search?q={event.text.replace(" ", "%20")}%20Movie')], [
                             Button.url('How To Watch',
                                     f'https://t.me/cynitemovies/17')]
@@ -150,7 +150,7 @@ async def message_handler(event):
     except Exception as e:
         print(e)
         await txt.delete()
-        result = await event.reply("Please Search Again...🔍🙏")
+        result = await event.reply("Please Try Again Later...🔍🙏")
         await asyncio.sleep(Config.AUTO_DELETE_TIME)
         await event.delete() 
         return await result.delete()
