@@ -89,7 +89,7 @@ async def send_chatmsg(bot, message):
         await message.reply_text("<b>Cᴏᴍᴍᴀɴᴅ Iɴᴄᴏᴍᴘʟᴇᴛᴇ...</b>")
 
 
-@Client.on_message(filters.command("contact") & filters.group)
+@Client.on_message(filters.command("contact") & filters.group(ADMINS))
 async def report_user(bot, message):
     if message.reply_to_message:
         chat_id = message.chat.id
