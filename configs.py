@@ -28,7 +28,7 @@ class Config(object):
     BROADCAST_AS_COPY = os.getenv("BROADCAST_AS_COPY", "True")
     UPDATES_CHANNEL_USERNAME = os.getenv("UPDATES_CHANNEL_USERNAME", "cynitemovies")
     FORCE_SUB = os.getenv("FORCE_SUB", "False")
-    AUTO_DELETE_TIME = int(os.getenv("AUTO_DELETE_TIME", 300))
+    AUTO_DELETE_TIME = int(os.getenv("AUTO_DELETE_TIME", 120))
     MDISK_API = os.getenv("MDISK_API", "Qu7jX9V0Sn3q1JHdxjPp")
     REPLIT_USERNAME = os.environ.get("REPLIT_USERNAME", None) # your replit username 
     REPLIT_APP_NAME = os.environ.get("REPLIT_APP_NAME", None) # your replit app name 
