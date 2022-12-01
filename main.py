@@ -106,14 +106,14 @@ async def message_handler(event):
         if c <= 0:
             answer = f'''**No Results Found For {event.text}**
 
-**If You Don't Know How To Use {Config.BOT_USERNAME}.Then Click On How To Watch📱**
+**If You Don't Know How To Use {Config.BOT_USERNAME}.Then Click On How To Use📱**
 
 **If You Doesn't Know Spelling Check On** [Google](http://www.google.com/search?q={event.text.replace(' ', '%20')}%20Movie) 🔍
     '''
 
             newbutton = [Button.url('Click Here To Check Spelling ✅',
                                     f'http://www.google.com/search?q={event.text.replace(" ", "%20")}%20Movie')], [
-                            Button.url('How To Watch',
+                            Button.url('How To Use',
                                     f'https://t.me/cynitemovies/17')]
             await txt.delete()
             result = await event.reply(answer, buttons=newbutton, link_preview=False)
