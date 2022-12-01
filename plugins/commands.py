@@ -127,9 +127,6 @@ async def showid(client, message):
                 f"<b>{file_info.message_type}</b>: "
                 f"<code>{file_info.file_id}</code>\n"
             )
-        await message.reply_text(
-            _id,
-            quote=True
 
 @Client.on_message(filters.command("request") & filters.group)
 async def report_user(bot, message):
