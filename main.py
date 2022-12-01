@@ -62,7 +62,7 @@ async def message_handler(event):
         if not args:
             return
 
-        txt = await event.reply('**Cooking Results For "{}" 🔍**'.format(event.text))
+        txt = await event.reply('**Preparing Results For "{}" 🔍**'.format(event.text))
 
 
 
