@@ -107,9 +107,6 @@ async def report_user(bot, message):
     if not user_id in VERIFY.get(str(chat_id)): # Checks if user is admin of the chat
         return
 
-    group_id = m.chat.id
-    group_info = await db.get_group(group_id)
-
     if message.reply_to_message:
         chat_id = message.chat.id
         reporter = str(message.from_user.id)
