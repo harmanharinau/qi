@@ -91,22 +91,6 @@ async def send_chatmsg(bot, message):
 
 @Client.on_message(filters.command("contact") & filters.group)
 async def report_user(bot, message):
-    global VERIFY
-    chat_id = m.chat.id
-    user_id = m.from_user.id if m.from_user else None
-
-
-    if VERIFY.get(str(chat_id)) == None: # Make Admin's ID List
-        admin_list = []
-        async for x in c.iter_chat_members(chat_id=chat_id, filter="administrators"):
-            admin_id = x.user.id 
-            admin_list.append(admin_id)
-        admin_list.append(None)
-        VERIFY[str(chat_id)] = admin_list
-
-    if not user_id in VERIFY.get(str(chat_id)): # Checks if user is admin of the chat
-        return
-
     if message.reply_to_message:
         chat_id = message.chat.id
         reporter = str(message.from_user.id)
