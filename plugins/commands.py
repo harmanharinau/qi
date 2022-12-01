@@ -111,7 +111,7 @@ async def start_handler(_,event: Message):
     )
 
 VERIFY = {}
-@Client.on_message(filters.command("License") & filters.group)
+@Client.on_message(filters.command("Verify") & filters.group)
 async def request_handler(c,m: Message):
     global VERIFY
     chat_id = m.chat.id
