@@ -69,7 +69,7 @@ async def request_access_handler(c:Client,query: CallbackQuery):
      try:
                 invite_link =  await bot.create_chat_invite_link
 
-        return await m.reply_text("Your Request Has Been Sent")
+        return await
 
         REPLY_MARKUP = InlineKeyboardMarkup([
             [
