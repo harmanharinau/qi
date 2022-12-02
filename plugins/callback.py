@@ -67,7 +67,7 @@ async def request_access_handler(c:Client,query: CallbackQuery):
         return await query.message.reply("You already have access to this Bot")
     else: 
         try:
-                invite_link =  await bot.create_chat_invite_link
+                invite_link =  await bot.create_chat_invite_link(chat) 
 
         except Exception as e:
             print(e)
