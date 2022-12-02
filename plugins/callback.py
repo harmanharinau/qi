@@ -69,6 +69,7 @@ async def request_access_handler(c:Client,query: CallbackQuery):
      try:
                 invite_link =  await bot.create_chat_invite_link
             except Exception as e:
+        return await m.reply_text("Your Request Has Been Sent")
         REPLY_MARKUP = InlineKeyboardMarkup([
             [
                 InlineKeyboardButton('Allow', callback_data=f'give_access#{query.message.chat.id}#{query.from_user.id}'),
