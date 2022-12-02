@@ -13,6 +13,7 @@ class Database:
         self.api_keys = self.db['api_keys']
         self.groups = self.db['groups']
         self.channels = self.db['channels']
+        self.grp = self.db.groups
 
     def new_user(self, id):
         return dict(
@@ -41,6 +42,13 @@ class Database:
     async def get_all_users(self):
         all_users = self.col.find({})
         return all_users
+
+    async def total_chat_count(self):
+        count = await self.grp.count_documents({})
+        return count
+    
+    async def get_all_chats(self):
+        return self.grp.find({})
 
     async def delete_user(self, user_id):
         self.col.delete_many({'id': int(user_id)})
