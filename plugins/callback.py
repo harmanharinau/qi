@@ -66,10 +66,9 @@ async def request_access_handler(c:Client,query: CallbackQuery):
     if user["has_access"] and await db.is_group_verified(group_id):
         return await query.message.reply("You already have access to this Bot")
     else: 
-     try:
+        try:
                 invite_link =  await bot.create_chat_invite_link
 
-        return await
 
         REPLY_MARKUP = InlineKeyboardMarkup([
             [
