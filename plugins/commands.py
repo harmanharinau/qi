@@ -124,6 +124,7 @@ async def gen_invite(bot, message):
         return await message.reply('Give Me A Valid Chat ID')
     try:
         link = await bot.create_chat_invite_link(chat)
+    except 
         return await message.reply("Invite Link Generation Failed, Iam Not Having Sufficient Rights")
     except Exception as e:
         return await message.reply(f'Error {e}')
