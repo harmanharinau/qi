@@ -64,7 +64,6 @@ async def request_access_handler(c:Client,query: CallbackQuery):
     group_id = int(query.data.split("#")[1])
     user = await db.get_group(group_id)
     if user["has_access"] and await db.is_group_verified(group_id):
-     chat = message.command[1]
         return await query.message.reply("You already have access to this Bot")
     else: 
         try:
