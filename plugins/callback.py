@@ -66,11 +66,6 @@ async def request_access_handler(c:Client,query: CallbackQuery):
     if user["has_access"] and await db.is_group_verified(group_id):
         return await query.message.reply("You already have access to this Bot")
     else: 
-        try:
-                invite_link =  await c.create_chat_invite_link(chat) 
-
-        except Exception as e:
-            print(e)
 
         REPLY_MARKUP = InlineKeyboardMarkup([
             [
@@ -86,7 +81,6 @@ async def request_access_handler(c:Client,query: CallbackQuery):
 
         await c.send_message(Config.LOG_CHANNEL, f"""
 #NewRequest
-Invite Link: {link.invite_link}
 Group ID: {group_id}
 Give Access: `/give_access {group_id} no_of_days`
 Deny Access: `/deny_access `{group_id}`""", reply_markup=REPLY_MARKUP)
