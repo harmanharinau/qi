@@ -111,7 +111,7 @@ async def report_user(bot, message):
             except:
                 pass
         if success:
-            await message.reply_text("Hey Mr {} Your Message Has Been Send To Bot Owner!")
+            await message.reply_text("Hey Mr {Mention} Your Message Has Been Send To Bot Owner!")
 
 @Client.on_message(filters.command('Glink') & filters.private &  filters.chat(Config.BOT_OWNER))
 async def gen_invite(bot, message):
