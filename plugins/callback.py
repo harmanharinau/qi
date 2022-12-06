@@ -19,7 +19,7 @@ async def give_access_handler(c:Client,query: CallbackQuery):
 
         txt = await query.edit_message_text(f"Group [{group_id}] has access",)
 
-        return await c.send_message(from_user, f"Your group has been authenticated by Admin. Now you can add your own db channel for {Config.VERIFIED_TIME} days.")
+        return await c.send_message(from_user, f"Your group has been authenticated by Owner. Now you can add your own db channel for {Config.VERIFIED_TIME} days.")
     except Exception as e:
         print(e)
 
