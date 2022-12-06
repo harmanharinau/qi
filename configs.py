@@ -23,7 +23,7 @@ class Config(object):
     HOME_TEXT = os.getenv("HOME_TEXT", "**ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕ɪ ᴄᴀɴ ᴘʀᴏᴠɪᴅᴇ ᴛʜᴇʀᴇ ʏᴏᴜʀ ʟɪɴᴋꜱ. ꜰᴏʀ ᴍᴏʀᴇ ɪɴꜰᴏ ᴄʟɪᴄᴋ ᴏɴ ʜᴇʟᴘ ✅**" )
     UPDATES_CHANNEL = os.getenv("UPDATES_CHANNEL", "-1001249072794")
     DATABASE_URL = os.getenv("DATABASE_URL", "mongodb+srv://piro:piro@cluster0.hnyyyw2.mongodb.net/?retryWrites=true&w=majority")
-    LOG_CHANNEL = int(os.getenv("LOG_CHANNEL", "-1001805890096"))
+    LOG_CHANNEL = int(os.getenv("LOG_CHANNEL", "-1001735125267"))
     RESULTS_COUNT = int(os.getenv("RESULTS_COUNT", 20))
     BROADCAST_AS_COPY = os.getenv("BROADCAST_AS_COPY", "True")
     UPDATES_CHANNEL_USERNAME = os.getenv("UPDATES_CHANNEL_USERNAME", "cynitebackup")
