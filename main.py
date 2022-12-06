@@ -150,7 +150,7 @@ async def message_handler(event):
     except Exception as e:
         print(e)
         await txt.delete()
-        result = await event.reply("Please Try Again Later...🔍 Or Search {event.text} In @MdiskSearch_RoboT 🙏")
+        result = await event.reply("Please Try Again Later...🔍 Or Search In @MdiskSearch_RoboT 🙏")
         await asyncio.sleep(Config.AUTO_DELETE_TIME)
         await event.delete() 
         return await result.delete()
