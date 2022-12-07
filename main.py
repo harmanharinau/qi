@@ -133,11 +133,9 @@ async def message_handler(event):
             title=event.text,
             author=Config.BOT_USERNAME
         )
-        message = f'**Click Below Button 👇 For "{event.text}"**'
+        message = f'**Click Here 👇 For "{event.text}"**\n\n[🍿🎬 {str(event.text).upper()}\n🍿🎬 {str("Click me for results").upper()}]({tgraph_result})'
 
-        newbutton = [Button.url('📍Click Here📍',
-                                    f'{tgraph_result}')], [
-                            Button.url('Join Updates Channel ✅',
+        newbutton = [Button.url('Join Updates Channel ✅',
                                     f'https://t.me/{Config.UPDATES_CHANNEL_USERNAME}')]
 
         await txt.delete()
