@@ -13,7 +13,7 @@ class Config(object):
     BOT_SESSION_NAME = os.getenv("BOT_SESSION_NAME", "harmanahbot")
     USER_SESSION_STRING = os.getenv("USER_SESSION_STRING", "1BVtsOL4BuzlutllAIYwyeu27j9y6pApzp6wvWSneSFkbAlvNq25ndkrP6krMYOKD0VZ5fns8ojHt7Mvs-XRgWvyN02OFuI2nkBnEnNvrkaHj9KGDhypu-LWoEvW-fsHkeFibLHO_uK4t5OVVTdjSDqjzZAI45rFulq9msGXLA4YMs4mQfwXFeDVlihRdfLLVC-_cYtuxokhwbQ-31flsgz9i74AaH7aT_uvp4JN_WudXrwcn22LmVYLtLyioZFZxjhV8VhWccK7nsTnR6MHyf5ioQ12d1lfpTtWSDbFKLV_RQSVM6UFkHb1n7Mv-Jvba0tEJH8yeJ2It0zBMfqDDC62K6kKPC6I=")
     CHANNEL_ID = int(os.getenv("CHANNEL_ID", "-1001697543381"))
-    BOT_USERNAME = os.getenv("BOT_USERNAME", "MdiskSearch_Bot")
+    BOT_USERNAME = os.getenv("BOT_USERNAME", "MdiskSearch_RoBot")
     BOT_OWNER = int(os.getenv("BOT_OWNER", "1883570185"))
 #    OWNER_USERNAME = os.getenv("OWNER_USERNAME", "cyniteofficial")
     BACKUP_CHANNEL = os.getenv("BACKUP_CHANNEL", "cynitebackup")
