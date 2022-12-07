@@ -106,7 +106,7 @@ async def message_handler(event):
         if c <= 0:
             answer = f'''**No Results Found For {event.text}**
 
-**If You Don't Know How To Use @{Config.BOT_USERNAME}.Then Click On How To Use📱**
+**If You Don't Know How To Use {Config.BOT_USERNAME}.Then Click On How To Use📱**
 
 **If You Doesn't Know Spelling Check On** [Google](http://www.google.com/search?q={event.text.replace(' ', '%20')}%20Movie) 🔍
     '''
