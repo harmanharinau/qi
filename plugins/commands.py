@@ -10,7 +10,7 @@ async def help_handler(_, event: Message):
     await event.reply_text(Config.ABOUT_HELP_TEXT.format(event.from_user.mention),
         reply_markup=InlineKeyboardMarkup([
             [
-            InlineKeyboardButton('➕ Add Me To Your Groups ➕', url=f'http://t.me/{Config.BOT_USERNAME}?startgroup=true')
+            InlineKeyboardButton('➕ Add Me To Your Groups ➕', url=f'http://t.me/MdiskSearch_Robot?startgroup=true')
             ],
 
              [InlineKeyboardButton("About", callback_data="About_msg"),
@@ -145,7 +145,7 @@ async def start_handler(_,event: Message):
         caption=Config.START_MSG.format(event.from_user.mention),
         reply_markup=InlineKeyboardMarkup([
             [
-            InlineKeyboardButton('➕ Add Me To Your Groups ➕', url=f'http://t.me/{Config.BOT_USERNAME}?startgroup=true')
+            InlineKeyboardButton('➕ Add Me To Your Groups ➕', url=f'http://t.me/MdiskSearch_Robot?startgroup=true')
             ],
 
              [InlineKeyboardButton("About", callback_data="About_msg"),
